@@ -1,0 +1,78 @@
+@font-face {
+    font-family: primary;
+    src: url('../fonts/FuturaPTMedium.ttf');
+}
+
+@font-face{
+    font-family: secondary;
+    src: url('../fonts/Souvenir_Greek_Demi_BT.ttf');
+}
+
+@font-face{
+    font-family: montserrat;
+    src: url('../fonts/Montserrat-Regular.ttf');
+}
+
+#main_image{
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+    height: 80vh;
+}
+
+#main_image img{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%);
+    background-size: cover;
+}
+
+#main_heading{
+    font-family: primary;
+    font-size: 4em;
+    font-weight: bold;
+    color: #142E54;
+}
+
+#decor_obj{
+    height: 2px;
+    border-radius: 16px;
+    width: 25vw;
+    background-image: linear-gradient(to right, #1A1C2B, #0C0D16);
+}
+
+.usercard{
+    border: 1.3px solid rgba(0,0,0,0.3);
+    transition: 0.6s;
+}
+
+.usercard:hover{
+    border: 1.3px solid #5599FF;
+    transition: 0.6s;
+    box-shadow: 3px 4px 7px #888888;
+}
+
+.usercred_name{
+    font-family: montserrat;
+}
+
+.ordercard{
+    border: 1.3px solid rgba(0,0,0,0.3);
+    transition: 0.6s;
+}
+
+.ordercard:hover{
+    border: 1.3px solid #5599FF;
+    transition: 0.6s;
+    box-shadow: 3px 4px 7px #888888;
+}
+
+.card.ordercard.m-3.p-1:hover{
+    cursor: pointer;
+}
+
+
+

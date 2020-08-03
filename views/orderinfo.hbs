@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order Details</title>
+    <link rel="shortcut icon" href="/images/webicon.png">
+    <link rel="stylesheet" href="/css/bootstrap.css">
+    <link rel="stylesheet" href="/css/orderinfo.css">
+    <!-- we are not using ../public/css/bootstrap.css because we are already imported static "public" folder on the route = "/" in root index.js-->
+    <!-- So now whenever we need to use the files inside the public folder, we will use "/then the path of the file we need" -->
+    <!-- If we used public folder on a different route like on "/route_name", then we will import the files in the public folder using "/route_name/path to the required file" -->
+</head>
+
+<body>
+    <h2 class="text-center m-3" id="pg_heading"> Order Items for Order Id: {{id}} </h2>
+    <div class="container">
+        <div class="row justify-content-center">
+            <form action="/api/order/status" method="POST">
+                <label for="id">Order ID:</label>
+                <input type="text" name="id" value={{id}} readonly>
+                <label for="currentstatus">Current Status:</label>
+                <input type="text" name="currentstatus" value={{curstatus}} readonly>
+                <label for="status">Change Status:</label>
+                <select id="status" name="status" size="1">
+                    <option value="Ordered">Ordered</option>
+                    <option value="On_the_way">On_the_way</option>
+                    <option value="Delivered">Delivered</option>
+                    <option value="Cancelled">Cancelled</option>
+                </select><br><br>
+                <input type="submit">
+            </form>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="row justify-content-center">
+            <a href="/download/{{id}}" download="OrderList"> <button class="btn btn-primary"> Download File </button> </a>
+        </div>
+    </div>
+
+    <div class="container-fluid">
+        <div class="row no-gutters justify-content-center">
+            {{#each list as |item|}}
+            <div class="col-3 mb-3">
+                <div class="card usercard m-3 p-1">
+                    <img src={{item.prod_img}} alt="" class="card-img-top">
+                    <div class="card-body p-0">
+                        <p class="card-text usercred_name p-0 m-0 text-left" align="center">
+                            <b>Product Id:</b> {{item.prod_id}}
+                        </p>
+                        <p class="card-text usercred_name p-0 m-0 text-left" align="center">
+                            <b>Product Name:</b> {{item.prod_name}}
+                        </p>
+                        <p class="card-text usercred_name p-0 m-0 text-left" align="center">
+                            <b>Product Price:</b> {{item.prod_price}}
+                        </p>
+                        <p class="card-text usercred_name p-0 m-0 text-left" align="center">
+                            <b>Product Quantity:</b> {{item.prod_qty}}
+                        </p>
+                        <p class="card-text usercred_name p-0 m-0 text-left" align="center">
+                            <b>Vendor Tag:</b> {{item.vendor_tag}}
+                        </p>
+                    </div>
+                </div>
+            </div>
+            {{/each}}
+        </div>
+    </div>
+</body>
+
+</html>

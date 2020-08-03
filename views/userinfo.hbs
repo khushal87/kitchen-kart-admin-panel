@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order Details</title>
+    <link rel="shortcut icon" href="/images/webicon.png">
+    <link rel="stylesheet" href="/css/bootstrap.css">
+    <link rel="stylesheet" href="/css/orderinfo.css">
+</head>
+
+<body>
+    <h2 class="text-center m-3" id="pg_heading"> Details for User Id: {{userId}} </h2>
+
+    <div class="container-fluid">
+        <div class="row no-gutters justify-content-center">
+            {{#each result as |user|}}
+            <div class="col-6 mb-3">
+                <div class="card usercard m-3 p-1">
+                    <div class="card-body p-0">
+                        <p class="card-text usercred_name p-0 m-0 text-left" align="center">
+                            <b>User Id:</b> {{user.user_id}}
+                        </p>
+                        <p class="card-text usercred_name p-0 m-0 text-left" align="center">
+                            <b>Auth Id:</b> {{user.auth_id}}
+                        </p>
+                        <p class="card-text usercred_name p-0 m-0 text-left" align="center">
+                            <b>Name:</b> {{user.name}}
+                        </p>
+                        <p class="card-text usercred_name p-0 m-0 text-left" align="center">
+                            <b>Wallet Amount:</b> {{user.wallet_amount}}
+                        </p>
+                        <p class="card-text usercred_name p-0 m-0 text-left" align="center">
+                            <b>Email:</b> {{user.email}}
+                        </p>
+                        <p class="card-text usercred_name p-0 m-0 text-left" align="center">
+                            <b>Add1:</b> {{user.add1}}
+                        </p>
+                        <p class="card-text usercred_name p-0 m-0 text-left" align="center">
+                            <b>Add2:</b> {{user.add2}}
+                        </p>
+                        <p class="card-text usercred_name p-0 m-0 text-left" align="center">
+                            <b>Landmark:</b> {{user.lanmark}}
+                        </p>
+                        <p class="card-text usercred_name p-0 m-0 text-left" align="center">
+                            <b>City:</b> {{user.city}}
+                        </p>
+                        <p class="card-text usercred_name p-0 m-0 text-left" align="center">
+                            <b>Pincode:</b> {{user.pincode}}
+                        </p>
+                        <p class="card-text usercred_name p-0 m-0 text-left" align="center">
+                            <b>Token ID:</b> {{user.token_id}}
+                        </p>
+                        <p class="card-text usercred_name p-0 m-0 text-left" align="center">
+                            <b>Pass Code:</b> {{user.pass_code}}
+                        </p>
+                        <p class="card-text usercred_name p-0 m-0 text-left" align="center">
+                            <b>Time Stamp:</b> {{user.time_stamp}}
+                        </p>
+                        <p class="card-text usercred_name p-0 m-0 text-left" align="center">
+                            <b>Cart Vendor Tag:</b> {{user.cart_vendor_tag}}
+                        </p>
+                        <p class="card-text usercred_name p-0 m-0 text-left" align="center">
+                            <b>Is Prime:</b> {{user.is_prime}}
+                        </p>
+                        <p class="card-text usercred_name p-0 m-0 text-left" align="center">
+                            <b>Refer Code:</b> {{user.refer_code}}
+                        </p>
+                    </div>
+                </div>
+            </div>
+            {{/each}}
+        </div>
+    </div>
+</body>
+
+</html>

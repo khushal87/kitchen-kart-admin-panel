@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Admin Panel</title>
+    <link rel="shortcut icon" href="images/webicon.png" />
+    <script src="js/jquery-3.5.1.js"></script>
+    <script src="js/script.js"></script>
+    <link rel="stylesheet" href="css/bootstrap.css" />
+    <link rel="stylesheet" href="css/main.css" />
+  </head>
+  <body>
+    <div class="container-fluid p-0" id="main_image">
+      <img src="images/head_img.jpg" />
+    </div>
+    <div id="main_heading_container" class="container-fluid m-1">
+      <h1 class="text-center" id="main_heading">Admin Dashboard</h1>
+      <div id="decor_obj" class="container decor_obj"></div>
+    </div>
+
+    <div class="row no-gutters justify-content-center">
+      <button class="btn btn-dark m-4" id="userbtn">Users</button>
+      <button class="btn btn-light m-4" id="orderbtn">Orders</button>
+    </div>
+
+    <div id="order-box" class="container-fluid" style="display: none;">
+      <div class="row justify-content-center" id="order_list">
+        <div class="col-3 mb-3">
+          <div class="card ordercard m-3 p-1">
+            <div class="card-body p-0">
+              <p
+                class="card-text usercred_name p-0 m-0 text-left"
+                align="center"
+              >
+                <b>Order_index:</b> ${i}
+              </p>
+              <p
+                class="card-text usercred_name p-0 m-0 text-left"
+                align="center"
+              >
+                <b>Order Id:</b> ${response[i]['order_id']}
+              </p>
+              <p
+                class="card-text usercred_name p-0 m-0 text-left"
+                align="center"
+              >
+                <b>Order Date:</b> ${response[i]['order_date']}
+              </p>
+              <p
+                class="card-text usercred_name p-0 m-0 text-left"
+                align="center"
+              >
+                <b>Total Items:</b> ${response[i]['total_items']}
+              </p>
+              <p
+                class="card-text usercred_name p-0 m-0 text-left"
+                align="center"
+              >
+                <b>Total Amount:</b> ${response[i]['total_amount']}
+              </p>
+              <p
+                class="card-text usercred_name p-0 m-0 text-left"
+                align="center"
+              >
+                <b>Order Status:</b> ${response[i]['order_status']}
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="user-box" class="container-fluid">
+      <div class="container justify-content-center" style="width: 50vw;" id="user-finder">
+        <form action="/api/users/" method="POST">
+        <input type="text" name="userid" id="userid" placeholder="Enter User Id..." class="form-control">
+        <h1 align="center"><button type="submit" class="btn btn-primary my-2" id="finduserbtn">Get User Details</button></h1>
+        </form>
+      </div>
+      <div class="row justify-content-center" id="user_list">
+        <div class="col-3 mb-3">
+          <div class="card usercard m-3 p-1">
+            <div class="card-body p-0">
+              <p
+                class="card-text usercred_name p-0 m-0 text-left"
+                align="center"
+              >
+                <b>User_index:</b> index
+              </p>
+              <p
+                class="card-text usercred_name p-0 m-0 text-left"
+                align="center"
+              >
+                <b>Name:</b> name
+              </p>
+              <p
+                class="card-text usercred_name p-0 m-0 text-left"
+                align="center"
+              >
+                <b>Email:</b> email
+              </p>
+              <p
+                class="card-text usercred_name p-0 m-0 text-left"
+                align="center"
+              >
+                <b>Phone:</b> phone
+              </p>
+              <p
+                class="card-text usercred_name p-0 m-0 text-left"
+                align="center"
+              >
+                <b>Landmark:</b> landmark
+              </p>
+              <p
+                class="card-text usercred_name p-0 m-0 text-left"
+                align="center"
+              >
+                <b>City:</b> city
+              </p>
+              <p
+                class="card-text usercred_name p-0 m-0 text-left"
+                align="center"
+              >
+                <b>Pincode:</b> pincode
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      
+  </body>
+</html>

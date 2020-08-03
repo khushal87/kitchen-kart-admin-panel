@@ -1,0 +1,8 @@
+@font-face{
+    font-family: montserrat;
+    src: url('../fonts/Montserrat-Regular.ttf');
+}
+
+#pg_heading{
+    font-family: montserrat;
+}
