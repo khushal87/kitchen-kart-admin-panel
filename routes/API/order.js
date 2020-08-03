@@ -15,7 +15,6 @@ route.get("/", function (req, res) {
       `http://ec2-13-232-236-5.ap-south-1.compute.amazonaws.com:3000/api/order/items/${id}`
     )
       .then(function (response) {
-        console.log(response.json());
         return response.json();
       })
       .then(function (data) {
