@@ -12,7 +12,7 @@ route.get("/", function (req, res) {
     res.send("No Order Id was Provided!!!");
   } else {
     fetch(
-      `http://ec2-13-232-236-5.ap-south-1.compute.amazonaws.com:3000/api/order/items/${id}`
+      `https://api.kitchenkartapp.in/api/order/items/${id}`
     )
       .then(function (response) {
         return response.json();
@@ -22,7 +22,7 @@ route.get("/", function (req, res) {
         let list = data["response"];
         if (list.length != 0) {
           fetch(
-            `http://ec2-13-232-236-5.ap-south-1.compute.amazonaws.com:3000/api/orders`
+            `https://api.kitchenkartapp.in/api/orders`
           )
             .then(function (response) {
               return response.json();
@@ -61,7 +61,7 @@ route.post("/status", async function (req, res) {
     console.log(req.body.status);
     console.log(req.body.id);
     const response = await axios.put(
-      `http://ec2-13-232-236-5.ap-south-1.compute.amazonaws.com:3000/api/orders/status/${req.body.id}`,
+      `https://api.kitchenkartapp.in/api/orders/status/${req.body.id}`,
       {
         status: req.body.status,
       }

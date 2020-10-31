@@ -3,7 +3,7 @@ const fetch = require('node-fetch');
 
 route.get("/", function (req, res) {
   fetch(
-    `http://ec2-13-232-236-5.ap-south-1.compute.amazonaws.com:3000/api/orders/`
+    `https://api.kitchenkartapp.in/api/orders/`
   )
     .then(function (response) {
       return response.json();
