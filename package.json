@@ -16,7 +16,7 @@
     "fs": "0.0.1-security",
     "hbs": "^4.1.1",
     "json2xls": "^0.1.2",
-    "node-fetch": "^2.6.1",
+    "node-fetch": "^2.6.7",
     "path": "^0.12.7"
   }
 }
